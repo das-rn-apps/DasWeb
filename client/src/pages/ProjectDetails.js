@@ -11,7 +11,6 @@ function ProjectDetails() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { id } = useParams();
-    console.log("id", id);
     const [feedbackList, setFeedbackList] = useState([]);
 
     useEffect(() => {
@@ -49,8 +48,8 @@ function ProjectDetails() {
 
     const handleFeedbackSubmit = async (formData) => {
         try {
-            await submitFeedback(formData);
-            const updatedFeedback = await fetchFeedback();
+            await submitFeedback(formData, id);
+            const updatedFeedback = await fetchFeedback(id);
             setFeedbackList(updatedFeedback);
         } catch (error) {
             console.error('Error submitting feedback:', error);
@@ -71,7 +70,7 @@ function ProjectDetails() {
                             <div className="project-rating">Rating: {project.rating}/5</div>
                         </div>
                     )}
-                    <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">Download App</a>
                 </div>
             </div>
 
@@ -109,10 +108,9 @@ function ProjectDetails() {
             )}
             <Link to="/projects" className="back-link">Back to Projects</Link>
             <FeedbackForm onSubmit={handleFeedbackSubmit} />
-            {project.userFeedback && project.userFeedback.length > 0 && (
+            <div>
                 <Feedback feedbackList={feedbackList} />
-            )}
-
+            </div>
         </div>
     );
 }

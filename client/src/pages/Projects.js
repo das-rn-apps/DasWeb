@@ -24,7 +24,7 @@ function Projects() {
                                     <span key={index} className="tech-tag">{tech}</span>
                                 ))}
                             </div>
-                            <Link to={`/project/${project._id}`} className="project-link">View Details</Link>
+                            <Link to={`/projects/${project._id}`} className="project-link">View Details</Link>
                         </div>
                     </div>
                 ))}

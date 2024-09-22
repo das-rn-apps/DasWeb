@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
 const feedbackSchema = new mongoose.Schema({
-    projectDetailsId: { type: mongoose.Schema.Types.ObjectId, ref: 'ProjectDetails' },
     name: { type: String, required: true },
     message: { type: String, required: true },
+    projectDetailsId: { type: mongoose.Schema.Types.ObjectId, ref: 'ProjectDetails' },
     email: { type: String }
 }, {
     timestamps: true

@@ -34,7 +34,7 @@ function Contact() {
         <div>
             <div className="contact-container">
                 <h3>Get in Touch</h3>
-                <FeedbackForm onSubmit={handleSubmitFeedback} />
+                <FeedbackForm onSubmit={handleSubmitFeedback} id={null} />
             </div>
             <div>
                 <Feedback feedbackList={feedbackList} />

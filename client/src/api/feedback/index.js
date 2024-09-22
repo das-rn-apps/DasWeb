@@ -2,8 +2,8 @@ const API_URL = process.env.REACT_APP_API_URL;
 
 export const fetchFeedback = async (id = null) => {
     try {
-        const endpoint = id ? `${API_URL}/feedback/project/${id}` : `${API_URL}/feedback/profile`;
-        const response = await fetch(endpoint);
+        const endpoint = id ? `${API_URL}/feedback/${id}` : `${API_URL}/feedback`;
+        const response = await fetch(endpoint, { method: 'GET' });
 
         if (!response.ok) {
             throw new Error('Failed to fetch feedback');
@@ -16,9 +16,10 @@ export const fetchFeedback = async (id = null) => {
     }
 };
 
-export const submitFeedback = async (formData) => {
+export const submitFeedback = async (formData, id = null) => {
     try {
-        const response = await fetch(`${API_URL}/feedback`, {
+        const endpoint = id ? `${API_URL}/feedback/${id}` : `${API_URL}/feedback`;
+        const response = await fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -37,15 +37,15 @@ const PORT = process.env.PORT || 1000;
 
     // Socket.IO setup
     io.on('connection', (socket) => {
-        // console.log(socket.id, 'is online');
+        console.log(socket.id, 'is online');
 
         socket.on('send_message', (message) => {
-            // console.log(message);
+            console.log(message);
             io.emit('receive_message', message);
         });
 
         socket.on('disconnect', () => {
-            // console.log(socket.id, 'went offline');
+            console.log(socket.id, 'went offline');
         });
     });
 
