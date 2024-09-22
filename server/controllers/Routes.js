@@ -9,6 +9,7 @@ import VideoRouter from './videos/index.js';
 import DoubtRouter from './doubts/index.js';
 import QuestionRouter from './question/index.js';
 import PlaylistRouter from './playlist/index.js';
+import ContactRouter from './contact/index.js';
 
 const ApiRouter = Router();
 
@@ -22,5 +23,6 @@ ApiRouter.use("/tests/addQuestion", QuestionRouter);
 ApiRouter.use("/videos", VideoRouter);
 ApiRouter.use("/doubts", DoubtRouter);
 ApiRouter.use("/playlist", PlaylistRouter);
+ApiRouter.use("/contact", ContactRouter);
 
 export default ApiRouter;
