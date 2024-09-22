@@ -111,4 +111,8 @@ img {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
+  main {
+    padding-top: calc(7rem);
+  }
 }

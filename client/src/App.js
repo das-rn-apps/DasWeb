@@ -3,14 +3,13 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
 // Import components
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
-import ProjectDetails from './components/ProjectDetails';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import ProjectDetails from './pages/ProjectDetails';
+import Contact from './pages/Contact';
 
 // Import mock data
-import { projectsData } from './mockApi';
 
 function App() {
   return (
@@ -32,14 +31,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects projects={projectsData} />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 
         <footer>
-          <p>&copy; 2023 Deepak. All rights reserved.</p>
+          <p>&copy; 2024 Deepak. All rights reserved.</p>
         </footer>
       </div>
     </Router>
