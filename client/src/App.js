@@ -6,7 +6,11 @@ import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
+import ProjectDetails from './components/ProjectDetails';
 import Contact from './components/Contact';
+
+// Import mock data
+import { projectsData } from './mockApi';
 
 function App() {
   return (
@@ -28,7 +32,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects" element={<Projects projects={projectsData} />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

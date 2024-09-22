@@ -5,13 +5,12 @@ import './Home.css';
 function Home() {
     return (
         <div className="home">
-            <h1>Deepak</h1>
-            <h2>Software Developer</h2>
-            <p>Specializing in full stack mobile app development</p>
-            <div className="cta-buttons">
-                <Link to="/projects" className="btn btn-primary">View Projects</Link>
-                <Link to="/contact" className="btn btn-secondary">Get in Touch</Link>
-            </div>
+            <h1>Welcome to My Portfolio</h1>
+            <p>
+                I'm a passionate web developer with expertise in creating
+                modern and responsive web applications.
+            </p>
+            <Link to="/contact" className="cta-button">Get in Touch</Link>
         </div>
     );
 }

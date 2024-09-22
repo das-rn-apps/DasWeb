@@ -1,34 +1,35 @@
 .about {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    max-width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .about h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
 .about p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: #34495e;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.skills,
-.education {
-    margin-bottom: 2rem;
+.skills {
+    margin-top: 2rem;
 }
 
-.about h3 {
-    font-size: 1.8rem;
-    color: #3498db;
+.skills h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
     margin-bottom: 1rem;
 }
 
-.about ul {
+.skills ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -36,32 +37,56 @@
     gap: 1rem;
 }
 
-.about ul li {
-    font-size: 1rem;
-    background-color: #ecf0f1;
-    color: #2c3e50;
+.skills li {
+    background-color: #f0f0f0;
+    color: #34495e;
     padding: 0.5rem 1rem;
     border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.education p {
-    margin-bottom: 0.5rem;
+.skills li:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-    .about h2 {
-        font-size: 2rem;
+    .about {
+        padding: 1.5rem;
+        margin: 1.5rem 1rem;
     }
 
-    .about h3 {
-        font-size: 1.5rem;
+    .about h2 {
+        font-size: 1.8rem;
     }
 
     .about p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
-    .about ul {
+    .skills h3 {
+        font-size: 1.3rem;
+    }
+
+    .skills ul {
         justify-content: center;
+    }
+
+    .skills li {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .about,
+    .home {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .about h2,
+    .home h1 {
+        font-size: 1.8rem;
     }
 }

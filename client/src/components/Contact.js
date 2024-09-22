@@ -74,14 +74,13 @@ function Contact() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email (optional)</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                     />
                 </div>
                 <div className="form-group">
@@ -103,20 +102,19 @@ function Contact() {
             {submitStatus === 'success' && <p className="success-message">Message sent successfully!</p>}
             {submitStatus === 'error' && <p className="error-message">Failed to send message. Please try again.</p>}
 
-            <div className="feedback-list">
-                <h3>Recent Feedback</h3>
-                {feedbackList.length > 0 ? (
-                    <ul>
+            {feedbackList.length > 0 && (
+                <section className="feedback-section">
+                    <h3>User Feedback</h3>
+                    <div className="user-feedback">
                         {feedbackList.map((feedback, index) => (
-                            <li key={index}>
-                                <strong>{feedback.name}:</strong> {feedback.message}
-                            </li>
+                            <div key={index} className="feedback-item">
+                                <p className="feedback-text">"{feedback.message}"</p>
+                                <p className="feedback-author">- {feedback.name}</p>
+                            </div>
                         ))}
-                    </ul>
-                ) : (
-                    <p>No feedback available yet.</p>
-                )}
-            </div>
+                    </div>
+                </section>
+            )}
         </div>
     );
 }

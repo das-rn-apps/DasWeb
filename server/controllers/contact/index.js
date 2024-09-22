@@ -5,9 +5,7 @@ import Contact from '../../models/Contact.js';
 const ContactRouter = Router();
 
 ContactRouter.post('/', async (req, res) => {
-    const { name, email, message } = req.body;
-    console.log(name, email, message);
-    const contact = new Contact({ name, email, message });
+    const contact = new Contact(req.body);
     await contact.save();
     res.status(200).json({ message: 'Contact saved successfully' });
 });

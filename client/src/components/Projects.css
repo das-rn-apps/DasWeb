@@ -1,7 +1,8 @@
 .projects {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    max-width: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .projects h2 {
@@ -9,6 +10,20 @@
     color: #2c3e50;
     margin-bottom: 2rem;
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.projects h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 .project-grid {
@@ -18,28 +33,40 @@
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
-    padding: 1.5rem;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project-content {
+    padding: 1.5rem;
 }
 
 .project-card h3 {
     font-size: 1.5rem;
-    color: #3498db;
+    color: #2c3e50;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .project-card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: #34495e;
     line-height: 1.6;
-    color: #555;
     margin-bottom: 1rem;
 }
 
@@ -47,17 +74,40 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .tech-tag {
-    font-size: 0.8rem;
     background-color: #ecf0f1;
     color: #2c3e50;
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
+    .projects {
+        padding: 1.5rem;
+        margin: 1.5rem 1rem;
+    }
+
     .projects h2 {
         font-size: 2rem;
     }
@@ -71,6 +121,31 @@
     }
 
     .project-card p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
+
+    .tech-tag {
+        font-size: 0.75rem;
+    }
+
+    .project-link {
+        display: block;
+        text-align: center;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeIn 0.5s ease-out forwards;
 }

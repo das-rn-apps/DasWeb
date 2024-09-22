@@ -5,22 +5,25 @@ function About() {
     return (
         <div className="about">
             <h2>About Me</h2>
-            <p>I'm a passionate software developer with expertise in building full-stack mobile applications. My goal is to create intuitive and efficient solutions that solve real-world problems.</p>
+            <p>
+                I'm a dedicated web developer with a passion for creating
+                innovative and user-friendly applications. With a strong
+                foundation in both front-end and back-end technologies,
+                I strive to deliver high-quality solutions that meet and
+                exceed client expectations.
+            </p>
             <div className="skills">
-                <h3>Skills</h3>
+                <h3>My Skills</h3>
                 <ul>
-                    <li>JavaScript (React, React Native, Node.js)</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>JavaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
                     <li>MongoDB</li>
                     <li>Express.js</li>
-                    <li>RESTful API Design</li>
-                    <li>Git & Version Control</li>
-                    <li>Agile Development</li>
+                    <li>Git</li>
                 </ul>
-            </div>
-            <div className="education">
-                <h3>Education</h3>
-                <p>Bachelor of Technology in Computer Science</p>
-                <p>XYZ University (2018-2022)</p>
             </div>
         </div>
     );
