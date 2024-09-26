@@ -90,3 +90,35 @@
         font-size: 1.8rem;
     }
 }
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-pill svg {
+    margin-right: 0.5rem;
+}
+
+.skill-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.skills-preview {
+    margin-bottom: 2rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/About.css';
+import skills from '../data/Skills';
 
 function About() {
     return (
@@ -12,19 +13,16 @@ function About() {
                 I strive to deliver high-quality solutions that meet and
                 exceed client expectations.
             </p>
-            <div className="skills">
-                <h3>My Skills</h3>
-                <ul>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>JavaScript</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>MongoDB</li>
-                    <li>Express.js</li>
-                    <li>Git</li>
-                </ul>
-            </div>
+            <section className="skills-preview">
+                <h2>Skills</h2>
+                <div className="skills-container">
+                    {skills.map((skill, index) => (
+                        <div key={index} className="skill-pill">
+                            <span className="skill-text">{skill.name}</span>
+                        </div>
+                    ))}
+                </div>
+            </section>
         </div>
     );
 }
