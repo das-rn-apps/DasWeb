@@ -1,10 +1,11 @@
 import { Router } from 'express';
 
-import ProjectDetailsRouter from './projectDetails/index.js';
-import FeedbackRouter from './feedback/index.js';
+import ProjectDetailsRouter from './projectDetails';
+import FeedbackRouter from './feedback';
 
-const ApiRouter = Router();
+const ApiRouter: Router = Router();
 
 ApiRouter.use("/project", ProjectDetailsRouter);
 ApiRouter.use("/feedback", FeedbackRouter);
+
 export default ApiRouter;

@@ -1,15 +1,15 @@
-import express from 'express';
+import express, { Application, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import http from 'http';
-import { Server } from 'socket.io';
-import connectDB from './config/db.js';
-import ApiRouter from './controllers/Routes.js';
+import { Server, Socket } from 'socket.io';
+import connectDB from './utills/db';
+import ApiRouter from './controllers/Routes';
 
-const app = express();
-const server = http.createServer(app);
+const app: Application = express();
+const server: http.Server = http.createServer(app);
 
-const io = new Server(server, {
+const io: Server = new Server(server, {
     cors: {
         origin: 'http://localhost:8081',
         methods: ['GET', 'POST'],
@@ -17,7 +17,7 @@ const io = new Server(server, {
     }
 });
 
-const PORT = process.env.PORT || 1000;
+const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 1000;
 
 (async () => {
     try {
@@ -36,10 +36,10 @@ const PORT = process.env.PORT || 1000;
     app.use('/', ApiRouter);
 
     // Socket.IO setup
-    io.on('connection', (socket) => {
+    io.on('connection', (socket: Socket) => {
         console.log(socket.id, 'is online');
 
-        socket.on('send_message', (message) => {
+        socket.on('send_message', (message: any) => {
             console.log(message);
             io.emit('receive_message', message);
         });
